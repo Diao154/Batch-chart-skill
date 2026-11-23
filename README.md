@@ -1,9 +1,4 @@
 # Batch-chart-skill
----
-name: batch-chart-skill
-description: Select or generate 10–30 academically defensible charts from one or more user-provided files, tables, or datasets. Prioritize diverse chart types and visually expressive scholarly design without using external data. Also use to polish existing scientific data figures for papers, theses, and reports.
----
-# Batch-chart-skill
 
 将用户提供的单份数据、多份数据或数据集转化为一组逻辑连贯、可复现、适合学术使用的图表。仅使用输入数据及可追溯的派生量。选图与设计默认优先追求图型多样、色彩鲜明和排版精细，每种视觉表达都应服务于具体的研究问题或观察。
 
