@@ -1,5 +1,50 @@
 # Batch-chart-skill
 
+面向 Codex 的科研批量绘图技能。根据用户提供的单份数据、多份数据或数据集，生成一套图型多样、色彩鲜明、适合论文和报告的学术图表。也支持已有科研图表的保真美化。
+
+## 功能
+
+- 一次数据绘图任务交付 **10–30 张正式图**，同套图统一编号，多面板图默认计为一张。数据不足时说明限制。
+- 逐源核对字段语义、单位、观测粒度和样本重叠，依据数据结构选择拼接、关联或分别绘制。分析仅使用用户提供的数据及可追溯派生量。
+- 优先选择信息互补的图型，用符合数据语义的配色、主辅面板和留白突出重点。逐图检查统计表达、字号、遮挡、拥挤和裁切。
+- 交付完整的 JPG 文件夹 ZIP、图表清单、图注和复现代码。工作台支持时同时展示图集，绘图库支持时另存 PDF 或 SVG。
+
+## 安装与使用
+
+1. 克隆或下载并解压本仓库。
+2. 将仓库内层的 [`batch-chart-skill`](batch-chart-skill/) 文件夹完整复制到项目根目录的 `.agents/skills/`。安装后入口路径是 `.agents/skills/batch-chart-skill/SKILL.md`。目录不存在时先创建。
+3. 在 Codex 中打开该项目，通过 `$batch-chart-skill` 调用，并指明要分析的数据文件或需要美化的图。
+
+> 用 $batch-chart-skill 分析我提供的两份 CSV。先检查能否关联，再生成一套适合论文的图表，逐张验收并导出 JPG 压缩包。
+
+> 用 $batch-chart-skill 美化这张已有科研图，保留数据值、图型、坐标单位和统计结论。
+
+绘图在 Codex 工作台中运行。绘图库和运行环境按输入及任务选择。
+
+## 目录结构
+
+```text
+batch-chart-skill/
+├── SKILL.md                      技能入口与默认交付规则
+├── agents/openai.yaml            Codex 显示名称与示例提示
+├── references/                   选图、多来源处理、美化与验收
+└── scripts/validate_delivery.py  可选的 JPG 和 ZIP 验收工具
+```
+
+可单独运行验收工具。它需要 Python 3.10+ 和 Pillow，以下命令从仓库根目录执行。将示例路径替换为实际输出的位置。
+
+```bash
+python -m pip install Pillow
+python batch-chart-skill/scripts/validate_delivery.py academic_charts_jpg --zip academic_charts_jpg.zip
+```
+
+工具检查图片数量、清单文件名、图片可读性和 ZIP 内容。图文布局、色彩和统计表达由绘图工作流逐图核对。
+
+## 许可与致谢
+
+本仓库按 [Apache License 2.0](LICENSE) 发布。科研绘图规范在此重新组织并扩展，加入了批量选图、多数据源追溯和 JPG 交付规则。科研证据组织参考 [Yuan1z0825/nature-skills 的 nature-figure](https://github.com/Yuan1z0825/nature-skills/tree/a65a8364b419e05f7d8d5d96842a1ff7e544b1bb/skills/nature-figure)。配色、字体和视觉验收参考 [TingxiYu/academic-figure-skill](https://github.com/TingxiYu/academic-figure-skill/tree/1df9940dd01ac939f072b12fe28d6353b79b90f9)。
+# Batch-chart-skill
+
 将用户提供的单份数据、多份数据或数据集转化为一组逻辑连贯、可复现、适合学术使用的图表。仅使用输入数据及可追溯的派生量。选图与设计默认优先追求图型多样、色彩鲜明和排版精细，每种视觉表达都应服务于具体的研究问题或观察。
 
 ## 核心约束
