@@ -1,0 +1,4 @@
+interface:
+  display_name: "Batch-chart-skill"
+  short_description: "Create diverse, polished scientific chart sets"
+  default_prompt: "用 $batch-chart-skill 根据我提供的数据绘制一套科研图表，逐张验收并交付 JPG 压缩包。"

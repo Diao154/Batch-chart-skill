@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+node_modules/
+.DS_Store
+Thumbs.db
+/academic_charts_jpg/
+/academic_charts_jpg.zip
+/qa_report.json
