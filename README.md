@@ -1,8 +1,9 @@
-<img width="1623" height="1813" alt="image" src="https://github.com/user-attachments/assets/6e12e948-4d2c-4e03-902f-3823431e641a" /># Batch-chart-skill
-
+# Bash-cart-skill
 面向 Codex 的科研批量绘图技能。根据用户提供的单份数据、多份数据或数据集，生成一套图型多样、色彩鲜明、适合论文和报告的学术图表。也支持已有科研图表的保真美化。
-##实例展示
+
+## 实例展示
 <img width="1623" height="1813" alt="contact_sheet" src="https://github.com/user-attachments/assets/5f6f8919-0b89-46ec-adbc-3a667ea301f4" />
+
 ## 功能
 
 - 一次数据绘图任务交付 **10–30 张正式图**，同套图统一编号，多面板图默认计为一张。数据不足时说明限制。
